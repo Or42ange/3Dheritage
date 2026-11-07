@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>3D Heritage AR</title>
+
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <!-- AR.js -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+    <a-scene
+        embedded
+        vr-mode-ui="enabled: false"
+        arjs="sourceType: webcam; debugUIEnabled: false;">
+
+        <!-- MARKER 1 : DAMA -->
+        <a-marker
+            type="pattern"
+            url="patterns/pattern-marker.patt">
+
+            <a-entity
+                position="0 0 0"
+                scale="4 4 4"
+                obj-model="obj: url(media/dama.obj);
+                           mtl: url(media/dama.mtl);"
+                animation="property: rotation;
+                           dur: 6000;
+                           to: 0 360 0;
+                           loop: true;
+                           easing: linear;">
+            </a-entity>
+
+        </a-marker>
+
+        <!-- MARKER 2 : VALENTINE CASTLE -->
+        <a-marker
+            type="pattern"
+            url="patterns/pattern-bea.patt">
+
+            <a-entity
+                position="0 0 0"
+                scale="4 4 4"
+                obj-model="obj: url(media/Valentine_Castle_Coloumun_Aligned.obj);
+                           mtl: url(media/Valentine_Castle_Coloumun_Aligned.mtl);"
+                animation="property: rotation;
+                           dur: 6000;
+                           to: 0 360 0;
+                           loop: true;
+                           easing: linear;">
+            </a-entity>
+
+        </a-marker>
+
+        <!-- AR Camera -->
+        <a-entity camera></a-entity>
+
+    </a-scene>
+
+</body>
+</html>
